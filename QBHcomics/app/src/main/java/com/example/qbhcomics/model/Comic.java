@@ -1,37 +1,47 @@
 package com.example.qbhcomics.model;
 
 public class Comic {
-    private int cm_img;
-    private String cm_chap;
-    private String cm_name;
+    private String name;
+    private String author;
+    private String image;
+    private String description;
 
-    public Comic(int cm_img, String cm_chap, String cm_name) {
-        this.cm_img = cm_img;
-        this.cm_chap = cm_chap;
-        this.cm_name = cm_name;
+    public Comic(String name, String author, String image, String description) {
+        this.name = name;
+        this.author = author;
+        this.image = image;
+        this.description = description;
     }
 
-    public int getCm_img() {
-        return cm_img;
+    public String getName() {
+        return name;
     }
 
-    public void setCm_img(int cm_img) {
-        this.cm_img = cm_img;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getCm_chap() {
-        return cm_chap;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setCm_chap(String cm_chap) {
-        this.cm_chap = cm_chap;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
-    public String getCm_name() {
-        return cm_name;
+    public String getImage() {
+        return image;
     }
 
-    public void setCm_name(String cm_name) {
-        this.cm_name = cm_name;
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

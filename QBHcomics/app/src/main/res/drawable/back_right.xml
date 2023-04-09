@@ -2,16 +2,19 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:drawable="@drawable/shadow_right">
     </item>
+
+
     <item>
-        <shape>
+
+        <shape android:shape="rectangle">
             <gradient
                 android:angle="230"
                 android:startColor="#D201FF"
                 android:endColor="#2B42BF"
                 />
             <corners
-                android:topLeftRadius="35dp"
-                android:bottomLeftRadius="35dp"
+                android:topLeftRadius="40dp"
+                android:bottomLeftRadius="40dp"
 
                 />
         </shape>

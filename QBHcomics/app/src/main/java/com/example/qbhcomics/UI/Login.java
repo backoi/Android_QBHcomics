@@ -13,11 +13,10 @@ import com.example.qbhcomics.R;
 import com.example.qbhcomics.databinding.LoginBinding;
 
 public class Login extends AppCompatActivity {
-   LoginBinding binding;
-   EditText email,pass;
-   Button btnlogin;
+    LoginBinding binding;
+    EditText email,pass;
+    Button btnlogin;
     TextView signupClient;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,10 +42,16 @@ public class Login extends AppCompatActivity {
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//
-                    Intent intent =new Intent(getApplicationContext(),Home.class);
-                    startActivity(intent);
-//
+//                String user = email.getText().toString();
+//                String password=pass.getText().toString();
+//                Boolean checkExist =db.checkuserPass(user,password);
+//                if(checkExist==true){
+                Intent intent =new Intent(getApplicationContext(),Home.class);
+                startActivity(intent);
+//                }
+//                else {
+//                    Toast.makeText(Login.this, "Incorrect account or password, please try again", Toast.LENGTH_SHORT).show();
+//                }
 //
             }
         });

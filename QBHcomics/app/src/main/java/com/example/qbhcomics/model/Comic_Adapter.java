@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -43,7 +44,7 @@ public class Comic_Adapter extends RecyclerView.Adapter<Comic_Adapter.ComicHolde
         holder.desc.setText(comic.getDescription());
         Glide.with(context).load(comic.getImage()).into(holder.imageView);
 
-        holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
+        holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent =new Intent(context, Details.class);
@@ -68,7 +69,7 @@ public class Comic_Adapter extends RecyclerView.Adapter<Comic_Adapter.ComicHolde
     public static class ComicHolder extends RecyclerView.ViewHolder{
         ImageView imageView;
         TextView name,author,desc;
-        ConstraintLayout constraintLayout;
+        LinearLayout linearLayout;
          public ComicHolder(@NonNull View itemView) {
              super(itemView);
 
@@ -77,7 +78,7 @@ public class Comic_Adapter extends RecyclerView.Adapter<Comic_Adapter.ComicHolde
              author=itemView.findViewById(R.id.author);
              desc=itemView.findViewById(R.id.desc);
 
-             constraintLayout=itemView.findViewById(R.id.main_layout);
+             linearLayout=itemView.findViewById(R.id.container);
          }
      }
 

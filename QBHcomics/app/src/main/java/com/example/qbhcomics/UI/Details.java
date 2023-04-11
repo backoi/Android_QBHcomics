@@ -24,7 +24,7 @@ public class Details extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.comic_details);
 
-        ImageView imageView=findViewById(R.id.poster_image);
+        ImageView imageView=findViewById(R.id.img_detail);
         TextView name=findViewById(R.id.name_detail);
         TextView author=findViewById(R.id.author_detail);
         TextView decs=findViewById(R.id.desc_detail);

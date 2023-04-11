@@ -1,16 +1,27 @@
 package com.example.qbhcomics.model;
 
 public class Comic {
+
     private String name;
     private String author;
     private String image;
     private String description;
+    private String content;
 
-    public Comic(String name, String author, String image, String description) {
+    public Comic(String name, String author, String image, String description, String content) {
         this.name = name;
         this.author = author;
         this.image = image;
         this.description = description;
+        this.content=content;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public String getName() {

@@ -13,6 +13,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.bumptech.glide.Glide;
 import com.example.qbhcomics.R;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -23,23 +24,24 @@ public class Details extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.comic_details);
-
+        CollapsingToolbarLayout collapsingToolbarLayout =findViewById(R.id.collapsingtoolbar);
         ImageView imageView=findViewById(R.id.img_detail);
         TextView name=findViewById(R.id.name_detail);
         TextView author=findViewById(R.id.author_detail);
-        TextView decs=findViewById(R.id.desc_detail);
+        TextView content=findViewById(R.id.desc_detail);
 
         Bundle bundle =getIntent().getExtras();
 
         String nameDetail =bundle.getString("name");
         String authorDetail =bundle.getString("author");
-        String descDetail =bundle.getString("desc");
+        String contentDetail =bundle.getString("content");
         String imgDetail =bundle.getString("img");
 
         Glide.with(this).load(imgDetail).into(imageView);
         name.setText(nameDetail);
         author.setText(authorDetail);
-        decs.setText(descDetail);
+        content.setText(contentDetail);
+        collapsingToolbarLayout.setTitle(nameDetail);
 
         //loadContent();
 

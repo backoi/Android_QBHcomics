@@ -10,7 +10,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.qbhcomics.R;
-import com.example.qbhcomics.databinding.LoginBinding;
 
 public class MainActivity extends AppCompatActivity {
     EditText email,pass;

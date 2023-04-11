@@ -42,6 +42,7 @@ public class Comic_Adapter extends RecyclerView.Adapter<Comic_Adapter.ComicHolde
         holder.name.setText(comic.getName());
         holder.author.setText(comic.getAuthor());
         holder.desc.setText(comic.getDescription());
+        holder.content.setText(comic.getDescription());
         Glide.with(context).load(comic.getImage()).into(holder.imageView);
 
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +55,7 @@ public class Comic_Adapter extends RecyclerView.Adapter<Comic_Adapter.ComicHolde
                 bundle.putString("author",comic.getAuthor());
                 bundle.putString("desc",comic.getDescription());
                 bundle.putString("img",comic.getImage());
+                bundle.putString("content",comic.getContent());
 
                 intent.putExtras(bundle);
                 context.startActivity(intent);
@@ -68,7 +70,7 @@ public class Comic_Adapter extends RecyclerView.Adapter<Comic_Adapter.ComicHolde
 
     public static class ComicHolder extends RecyclerView.ViewHolder{
         ImageView imageView;
-        TextView name,author,desc;
+        TextView name,author,desc,content;
         LinearLayout linearLayout;
          public ComicHolder(@NonNull View itemView) {
              super(itemView);
@@ -77,7 +79,7 @@ public class Comic_Adapter extends RecyclerView.Adapter<Comic_Adapter.ComicHolde
              name=itemView.findViewById(R.id.name);
              author=itemView.findViewById(R.id.author);
              desc=itemView.findViewById(R.id.desc);
-
+             content=itemView.findViewById(R.id.content);
              linearLayout=itemView.findViewById(R.id.container);
          }
      }

@@ -1,6 +1,6 @@
-package com.example.qbhcomics.model;
+package com.example.qbhcomics.UI;
 
-import static com.example.qbhcomics.R.*;
+import static com.example.qbhcomics.R.id.button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,22 +10,21 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.qbhcomics.R;
-import com.example.qbhcomics.UI.Details;
 
-public class Comment_Adapter extends AppCompatActivity {
-
+public class Message extends AppCompatActivity {
     private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(layout.comment);
+        setContentView(R.layout.comment);
 
-        button = (Button) findViewById(R.id.button);
+        button = (Button) findViewById(R.id.btnbutton);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Comment_Adapter.this, Details.class);
+                Intent intent = new Intent(Message.this, Details.class);
                 startActivity(intent);
             }
         });

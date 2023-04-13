@@ -14,10 +14,11 @@
         android:theme="@style/Theme.QBHcomics"
         tools:targetApi="31" >
         <activity
+            android:name=".UI.Message"
+            android:exported="false" />
+        <activity
             android:name=".UI.Details"
-            android:exported="false" >
-
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".UI.Home"
             android:exported="false" />

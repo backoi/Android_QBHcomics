@@ -10,21 +10,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.bumptech.glide.Glide;
 import com.example.qbhcomics.R;
-import com.example.qbhcomics.model.Comment_Adapter;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 public class Details extends AppCompatActivity {
     private Button button;
+
     RequestQueue requestQueue;
     @SuppressLint("MissingInflatedId")
     @Override
@@ -54,7 +47,7 @@ public class Details extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Details.this, Comment_Adapter.class);
+                Intent intent = new Intent(Details.this,Message.class);
                 startActivity(intent);
             }
         });

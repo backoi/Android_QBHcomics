@@ -63,6 +63,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -72,7 +73,25 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="comic description"
-            android:textSize="25dp"/>
+            android:textSize="25dp" />
 
     </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/button_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="bottom">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Đánh giá"
+            android:background="#4062eb"
+            android:layout_gravity="center_horizontal" />
+
+    </LinearLayout>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -11,11 +11,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.qbhcomics.R;
-import com.example.qbhcomics.databinding.SignupBinding;
+import com.example.qbhcomics.model.DatabaseHelper;
 
 public class Signup extends AppCompatActivity {
     EditText username, password, repassword;
     Button signUp;
+    TextView loginClient;
     DatabaseHelper databaseHelper;
 
     @Override
@@ -27,6 +28,7 @@ public class Signup extends AppCompatActivity {
         password = (EditText) findViewById(R.id.signup_pass);
         repassword = (EditText) findViewById(R.id.signup_repass);
         signUp = (Button) findViewById(R.id.signup_btn);
+        loginClient=(TextView)findViewById(R.id.login_client);
         databaseHelper = new DatabaseHelper(this);
 
         signUp.setOnClickListener(new View.OnClickListener() {
@@ -58,6 +60,13 @@ public class Signup extends AppCompatActivity {
                         Toast.makeText(Signup.this, "Invalid Password", Toast.LENGTH_SHORT).show();
                     }
                 }
+            }
+        });
+        loginClient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Signup.this,Login.class);
+                startActivity(intent);
             }
         });
     }

@@ -1,4 +1,4 @@
-package com.example.qbhcomics.UI;
+package com.example.qbhcomics.model;
 
 import android.content.ContentValues;
 import android.content.Context;

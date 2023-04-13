@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.qbhcomics.R;
-import com.example.qbhcomics.databinding.LoginBinding;
+import com.example.qbhcomics.model.DatabaseHelper;
 
 public class Login extends AppCompatActivity {
     EditText username, password;

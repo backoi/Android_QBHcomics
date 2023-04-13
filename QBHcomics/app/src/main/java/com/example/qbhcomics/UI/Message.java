@@ -1,7 +1,5 @@
 package com.example.qbhcomics.UI;
 
-import static com.example.qbhcomics.R.id.button;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;

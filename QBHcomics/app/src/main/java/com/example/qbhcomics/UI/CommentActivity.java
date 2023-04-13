@@ -1,4 +1,4 @@
-package com.example.qbhcomics.model;
+package com.example.qbhcomics.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,10 +10,11 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.qbhcomics.R;
+import com.example.qbhcomics.model.Comment;
 
 import java.util.ArrayList;
 
-public class CommentAdapter extends AppCompatActivity {
+public class CommentActivity extends AppCompatActivity {
     private ListView commentListView;
     private EditText nameEditText, contentEditText;
     private Button commentButton;
@@ -47,7 +48,7 @@ public class CommentAdapter extends AppCompatActivity {
                     nameEditText.setText("");
                     contentEditText.setText("");
                 } else {
-                    Toast.makeText(CommentAdapter.this, "Please enter name and content", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CommentActivity.this, "Please enter name and content", Toast.LENGTH_SHORT).show();
                 }
             }
         });

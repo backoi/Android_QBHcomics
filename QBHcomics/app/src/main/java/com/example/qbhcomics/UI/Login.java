@@ -8,22 +8,28 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.qbhcomics.R;
 import com.example.qbhcomics.databinding.LoginBinding;
 
 public class Login extends AppCompatActivity {
-    LoginBinding binding;
-    EditText email,pass;
-    Button btnlogin;
+    EditText username, password;
+    Button btnLogin;
     TextView signupClient;
+    DatabaseHelper databaseHelper;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        binding = LoginBinding.inflate(getLayoutInflater());
-//        setContentView(binding.getRoot());
         setContentView(R.layout.login);
+
+
+        username = (EditText) findViewById(R.id.edtEmail);
+        password = (EditText) findViewById(R.id.edtPass);
+        btnLogin = (Button) findViewById(R.id.btnlg);
+        databaseHelper = new DatabaseHelper(this);
 
         signupClient=(TextView)findViewById(R.id.signup_client);
         signupClient.setOnClickListener(new View.OnClickListener() {
@@ -33,26 +39,25 @@ public class Login extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-//        binding.signupClient.setOnClickListener(view->{
-//            startActivity(new Intent(Login.this, Signup.class));
-//        });
-        email=findViewById(R.id.edtEmail);
-        pass=findViewById(R.id.edtPass);
-        btnlogin=(Button)findViewById(R.id.btnlg);
-        btnlogin.setOnClickListener(new View.OnClickListener() {
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                String user = email.getText().toString();
-//                String password=pass.getText().toString();
-//                Boolean checkExist =db.checkuserPass(user,password);
-//                if(checkExist==true){
-                Intent intent =new Intent(getApplicationContext(),Home.class);
-                startActivity(intent);
-//                }
-//                else {
-//                    Toast.makeText(Login.this, "Incorrect account or password, please try again", Toast.LENGTH_SHORT).show();
-//                }
-//
+                String user = username.getText().toString();
+                String pass = password.getText().toString();
+
+                if (user.equals("") || pass.equals(""))
+                    Toast.makeText(Login.this, "All fields are mandatory", Toast.LENGTH_SHORT).show();
+                else {
+                    Boolean checkuserpass = databaseHelper.checkUserPassword(user,pass);
+                    if (checkuserpass == true){
+                        Toast.makeText(Login.this, "Login successfully", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplicationContext(), Home.class);
+                        startActivity(intent);
+                    }else {
+                        Toast.makeText(Login.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
+                    }
+                }
             }
         });
     }
